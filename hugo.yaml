@@ -2,6 +2,7 @@ baseURL: "https://hugo-profile.netlify.app"
 languageCode: "en-us"
 title: "Isaac"
 theme: hugo-profile
+canonifyURLs: true
 
 outputs:
   home:
