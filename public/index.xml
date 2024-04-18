@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Isaac</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Isaac</description>
+    <generator>Hugo 0.125.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Apr 2024 23:52:19 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New Portfolio Website</title>
+      <link>http://localhost:1313/blogs/my-first-post/</link>
+      <pubDate>Wed, 17 Apr 2024 23:52:19 +0800</pubDate>
+      <guid>http://localhost:1313/blogs/my-first-post/</guid>
+      <description>New Website With the end of my studies in Polytechnic, I have decided to create a new portfolio website!&#xA;I utilized Wix for my previous portfolio website. However, I wish to test out the skills I have learn in school. Therefore, I chose to create a new portfolio website which was hosted on git.&#xA;Intially I considered using HTML, CSS and Javascript to create my own website. However, I eventually decided against it as I wish to include blogging features into the website.</description>
+    </item>
+  </channel>
+</rss>

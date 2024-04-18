@@ -1,0 +1,287 @@
+baseURL: "https://hugo-profile.netlify.app"
+languageCode: "en-us"
+title: "Isaac"
+theme: hugo-profile
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+Paginate: 3
+enableRobotsTXT: true
+# disqusShortname: your-disqus-shortname
+# googleAnalytics: G-MEASUREMENT_ID
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: blog
+      name: Blog
+      title: Blog posts
+      url: /blogs
+      weight: 1
+    - identifier: gallery
+      name: Gallery
+      title: Blog posts
+      url: /gallery
+      weight: 2
+    #Dropdown menu
+    # - identifier: dropdown
+    #   title: Example dropdown menu
+    #   name: Dropdown
+    #   weight: 3
+    # - identifier: dropdown1
+    #   title: example dropdown 1
+    #   name: example 1
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 1
+    # - identifier: dropdown2
+    #   title: example dropdown 2
+    #   name: example 2
+    #   url: /#
+    #   parent: dropdown
+    #   weight: 2
+
+params:
+  title: "Isaac"
+  description: Text about my cool site
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/fav.png"
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+  
+  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+  mathjax: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  # color preference
+  # color:
+  #   textColor:
+  #   secondaryTextColor:
+  #   backgroundColor:
+  #   secondaryBackgroundColor:
+  #   primaryColor:
+  #   secondaryColor:
+
+  #   darkmode:
+  #     textColor:
+  #     secondaryTextColor:
+  #     backgroundColor:
+  #     secondaryBackgroundColor:
+  #     primaryColor:
+  #     secondaryColor:
+
+  # If you want to customize the menu, you can change it here
+  navbar:
+    align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+    brandLogo: "images/hamie.jpeg" # Logo for the brand | default is the favicon variable
+    # showBrandLogo: false # Show brand logo in nav bar | default is true
+    brandName: "Isaac" # Brand name for the brand | default is the title variable
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    stickyNavBar:
+      enable : true
+      showOnScrollUp : true
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  # Hero
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Isaac."
+    subtitle: "I love computers"
+    content: "An aspiring Malware researcher."
+    image: /images/test.jpeg
+    bottomImage:
+      enable: true
+    # roundImage: true # Make hero image circular | default false
+    button:
+      enable: true
+      name: "Resume"
+      url: "/others/IsaacResume.docx"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/isaackohspaces
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/isaac-koh-290721211/
+  # About
+  about:
+    enable: true
+    title: "About Me"
+    image: /images/test.jpeg
+    content: |-
+      I'm a Year 3 student in Ngee Ann Polytechnic pursuing the Cybersecurity and Digital Forensics Program. I am capable of using photoshop, navigating social media and programing in Python. I enjoy formulating more efficient solutions to problems with the aid of computer applications. This necessitates me to have a keen eye for details. Currently, I am learning more efficient ways to solve real-life problems with the aid of computers.
+
+      I am preparing to serve my national service.
+    skills:
+      enable: true
+      title: "Here are a few technologies I've been working with recently:"
+      items:
+        - "HTML"
+        - "CSS"
+        - "JavaScript"
+        - "Magnet Axiom"
+        - "Python"
+        - "C#"
+        - "PaloAlto Firewall"
+        - "VMware Workstation"
+
+  # Experience
+  experience:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - job: "Teaching Assistant"
+        company: "Ngee Ann Polytechnic"
+        date: "April 2024 - present"
+        content: "I am currently working as a teaching assistant in Ngee Ann Polytechnic for the Network Security Module. As a teaching assistant, I support the lecturer by assisting students with queries for their practicals. This includes aiding them with setting up and configuring Palo-Alto Firewall"
+
+      - job: "Technical Support Staff"
+        company: "Ngee Ann Polytechnic"
+        date: "Feb 2024 - April 2024"
+        content: |
+          As a Technical Support stuff, I helped provide technical support for Ngee Ann Polytechnic Mobile Device and Security Forensic (MDSF) module. I help set-up lab computer for the module and answer lecturer technical queries. I also help create practicals for the MDSF module. 
+
+      - job: "Cybersecurity Researcher Intern"
+        company: "CSIT"
+        date: "Sept 2023 - Jan 2024"
+        content: |
+          As a Cybersecurity Researcher Intern, I perform research into common Malware and their relevent techniques. I also perform analysis on security software to better understand the relevent anti-malware technologies and its effectivness against Malware.
+
+
+
+  # Education
+  education:
+    enable: true
+    # title: "Custom Name"
+    index: false
+    items:
+      - title: "Diploma in Cybersecurity and Digital Forensics"
+        school:
+          name: "Ngee Ann Polytechnic"
+        date: "2021 - 2024"
+        GPA: "3.97 out of 4.0"
+        content: |-
+          Awards
+            - Diploma with Merit
+            - Best Performance in Secure Software Development
+            - Best Performance for Server and Cloud Security
+            - Best Performance for Programming 2
+
+          Others
+            - Diploma Plus Certificate in Advance Computing Mathematics
+      - title: "GCE O Levels"
+        school:
+          name: "Chua Chu Kang Secondary School"
+        date: "2017 - 2020"
+        content: |-
+          Extracurricular Activities
+            - Infocomm Club AVA
+
+
+  # projects
+  projects:
+    enable: true
+    # title: "Custom Name"
+    items:
+      - title: My Website Portfolio
+        content: I used Hugo to generate my portfolio website (It is this website)
+        image: /images/projects/portfoliowebsite.png
+        badges:
+          - "Portfolio"
+          - "Hugo"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/gurusabarish/HugoProfileV2
+
+  #Contact
+  contact:
+    enable: true
+    # title: "Custom Name"
+    content: Here's my email!
+    btnName: Mail me
+    btnLink: mailto:isaackoh999@gmail.com
+    # formspree:
+    #   enable: true # `contact.email` value will be ignored
+    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   emailCaption: "Enter your email address"
+    #   messageCaption: "Enter your message here"
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: Recent Posts
+      enable: true
+      disableFeaturedImage: false
+    socialNetworks:
+      github: https://github.com/isaackohspaces
+      linkedin: https://www.linkedin.com/in/isaac-koh-290721211/
+
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages like blog and post
+  singlePages:
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>
