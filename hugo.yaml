@@ -1,4 +1,4 @@
-baseURL: "https://hugo-profile.netlify.app"
+baseURL: "https://isaackohspaces.github.io/website/"
 languageCode: "en-us"
 title: "Isaac"
 theme: hugo-profile
@@ -233,6 +233,17 @@ params:
         links:
           - icon: fab fa-github
             url: https://github.com/gurusabarish/HugoProfileV2
+      - title: Cashope
+        content: As part of my Mobile Application Development module, I helped developed a shopping app, Cashope.
+        image: /images/projects/Cashope.png
+        badges:
+          - "Android"
+          - "Java"
+          - "Mobile App"
+        links:
+          - icon: fab fa-google
+            url: https://play.google.com/store/apps/details?id=sg.edu.np.mad_p03_group_gg&pli=1
+
 
   #Contact
   contact:
