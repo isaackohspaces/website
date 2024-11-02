@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+
+<head><script src="/website/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=website/livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=http://localhost:1313/website/hamie.jpeg type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="http://localhost:1313/website/css/font.css" media="all">
+
+
+
+  
+
+
+<meta property="og:url" content="http://localhost:1313/website/blogs/greyhatctfwriteup/">
+  <meta property="og:site_name" content="Isaac">
+  <meta property="og:title" content="GreyhatCTFwriteup">
+  <meta property="og:description" content="Grey hat CTF I participated in the GreyHats CTF 2024 along side a group of my friends. I mange to solve two challenges, All About Timing and Baby web.
+All About Timing. The All About Timing Challenge is a simple CTF challenge that requires us to guess what is the randomly generated number to get the flag. Opening the code provided, we can see the code utilise to create this challenge.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="blogs">
+    <meta property="article:published_time" content="2024-11-02T09:37:50+08:00">
+    <meta property="article:modified_time" content="2024-11-02T09:37:50+08:00">
+
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="GreyhatCTFwriteup">
+<meta name="twitter:description" content="Grey hat CTF I participated in the GreyHats CTF 2024 along side a group of my friends. I mange to solve two challenges, All About Timing and Baby web.
+All About Timing. The All About Timing Challenge is a simple CTF challenge that requires us to guess what is the randomly generated number to get the flag. Opening the code provided, we can see the code utilise to create this challenge.">
+
+
+<link rel="stylesheet" href="http://localhost:1313/website/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="http://localhost:1313/website/css/header.css" media="all">
+<link rel="stylesheet" href="http://localhost:1313/website/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="http://localhost:1313/website/css/theme.css" media="all">
+
+
+
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+    
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+<meta name="description" content="">
+<link rel="stylesheet" href="http://localhost:1313/website/css/single.css">
+
+
+<script defer src="http://localhost:1313/website/fontawesome-6/all-6.4.2.js"></script>
+
+  <title>
+GreyhatCTFwriteup | Isaac
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;        
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="http://localhost:1313/website/">
+                
+                Isaac
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="http://localhost:1313/website/#about" aria-label="about">
+                            About Me
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="http://localhost:1313/website/#experience"
+                            aria-label="experience">
+                            Experience
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="http://localhost:1313/website/#education"
+                            aria-label="education">
+                            Education
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="http://localhost:1313/website/#projects"
+                            aria-label="projects">
+                            Projects
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="http://localhost:1313/website/#contact"
+                            aria-label="contact">
+                            Contact
+                        </a>
+                    </li>
+                    
+
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="http://localhost:1313/website/blogs" title="Blog posts">
+                            
+                            Blog
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="http://localhost:1313/website/gallery" title="Blog posts">
+                            
+                            Gallery
+                        </a>
+                    </li>
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">GreyhatCTFwriteup</h1>
+            <div class="text-center">
+               
+              <small>|</small>
+              Nov 2, 2024
+
+              
+              <span id="readingTime">
+                min read
+              </span>
+              
+            </div>
+          </div>
+          
+          <div class="featured-image">
+            <img class="img-fluid mx-auto d-block" src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic1.png" alt="GreyhatCTFwriteup">
+          </div>
+          
+          <article class="page-content  p-2">
+          <h2 id="grey-hat-ctf">Grey hat CTF</h2>
+<p>I participated in the GreyHats CTF 2024 along side a group of my friends. I mange to solve two challenges, All About Timing and Baby web.</p>
+<h1 id="all-about-timing">All About Timing.</h1>
+<p>The All About Timing Challenge is a simple CTF challenge that requires us to guess what is the randomly generated number to get the flag.
+Opening the code provided, we can see the code utilise to create this challenge. Analysing the code, we can quickly summarise that the program does the following:</p>
+<ol>
+<li>Create a seed using the computer time</li>
+<li>Take in the users input</li>
+<li>Generate a number</li>
+<li>Perform a comparison between the users input and code generated number. If it matches, the flag is printed out, else a error message is printed out.
+<img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic1.png" alt="Image alt"></li>
+</ol>
+<p>On first glance of the code, it may seems that the number that is generated is indeed random. But the number may not be so random after all. Take a look at the <code>random.seed</code> function.
+When generating a random number using python rand.int, it will utilise the python seed value to do so. By default, the seed value will be based on the system time, which is the same as shown in the code given. However, there is a particular behaviour in which if we have the same seed value, the value that is generated will be the same.
+For example take a look at the below code snippet.</p>
+<pre tabindex="0"><code>import random
+random.seed(9)
+print(random.random())
+random.seed(9)
+print(random.random())
+</code></pre><p>We specified the seed number as 9 and ran the random.random() function and it gives us the following output.</p>
+<pre tabindex="0"><code>0.46300735781502145
+0.46300735781502145
+</code></pre><p>This means that as long the seed value is the same, the number generated will be the same. Hence, to guess the number generated by the computer in the All About Timing Challenge, we will have to find the seed value. In this case, we know the seed value which is the current time. Hence, if we are able to run both the script at the same time, we will be able to guess the random number.
+Thus, my solution was to run a local copy of the script and the actual script located on the Greyhat CTF server at the same time. If we time it properly, we will be able to retrieve the correct number. First, I executed the script locally and connected to the Greyhat CTF server at the same time. Once at the ‘Your guess’ prompt, I randomly entered a number in the local copy of the script. Once the number was generated in the error message, I copy and paste the number into the ‘Your Guess’ prompt given by the server. From there, I was able to retrieve the flag.
+<img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic2.png" alt="Image alt">
+This challenge as the name suggests is all about the timing. Both scripts had to be executed at the same time and it required multiple tries. However, I was eventually able to time it right and retrieve the flag.</p>
+<h2 id="baby-web">Baby Web</h2>
+<p>The baby web challenge requires us to locate the relevant cookie to get the administrator rights to retrieve the cookie.
+The Website given primarily consist of two pages, a Baby Web page and a Admin Page</p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic3.png" alt="Image alt"></p>
+<p>Clicking on Request for Admin Access, it opens a guest pop-up page that prompts us to enter a username and email.</p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic4.png" alt="Image alt"></p>
+<p>When entering the username and email, we were rickrolled. This was obviously not the solution.</p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic5.png" alt="Image alt"></p>
+<p>Thus, I try to inspect the HTTP traffic using burpsuite.  When accessing the admin webpage, I noticed that there was a session cookie.</p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic6.png" alt="Image alt"></p>
+<p>Upon analysing the cookie, it appears there consist of three parts. The first part ‘eyJpc19hZG1pbiI6ZmFsc2V9’ looks like a base 64 encoded string.</p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic7.png" alt="Image alt"></p>
+<p>Using a base64 decoder, we realise ‘eyJpc19hZG1pbiI6ZmFsc2V9’ decodes to {“is_admin”:false}. This implies that the cookie is most likely used as some form of a mechanism that helps identify if the session is an admin session or not.</p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic8.png" alt="Image alt"></p>
+<p>At first, I attempted to encode the {“is_admin”:true} and use it as the new cookie. Unsurprisingly, this did not work.</p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic9.png" alt="Image alt"></p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic10.png" alt="Image alt"></p>
+<p>I decided to then modify include the other two parts of the cookie which still did not work.</p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic11.png" alt="Image alt"></p>
+<p>Next, I decided to inspect the server code. In the given main.py file, we notice the app secret key.</p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic12.png" alt="Image alt"></p>
+<p>So what’s the purpose of this secret key? Recall previously how the cookie came in three part. The first part was the data, in which it contains a JSON like identifier that identifies if the session is an admin session. The other two parts are the date/time and the signature.
+This 3-part cookie is a way in which flaks manage a secure session. By signing the cookie data with the secret, it creates a signature that is added to the cookie as a form of integrity checking mechanism. However, as we were given the flask server secret, there should be a way to forge our own properly signed cookie.</p>
+<p>I decided to use flask-unsign (github link: <a href="https://github.com/Paradoxis/Flask-Unsign">https://github.com/Paradoxis/Flask-Unsign</a>) to help sign the cookie with the given secret. With this signed cookie, I manage to successfully enter a new page.</p>
+<p><img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic13.jpg" alt="Image alt"></p>
+<p>To retrive the information, we will need examine the website code and locate a hidden text box. Inspect the website elements and you can locate a hidden button in the HTML code.</p>
+<pre tabindex="0"><code>&lt;button type=&#34;button&#34; class=&#34;btn btn-primary&#34; data-bs-toggle=&#34;modal&#34; data-bs-target=&#34;#exampleModal&#34; hidden=&#34;&#34;&gt;
+        Super Secret Admin Button
+    &lt;/button&gt;
+</code></pre><p>Remove the</p>
+<pre tabindex="0"><code>hidden
+</code></pre><p>and it will reveal a admin button. Click the admin button and we will be able to retrieve the flag.</p>
+
+          </article>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <aside class="toc">
+              <h5>
+                Table Of Contents
+              </h5>
+              <div class="toc-content">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#grey-hat-ctf">Grey hat CTF</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#baby-web">Baby Web</a></li>
+  </ul>
+</nav>
+              </div>
+          </aside>
+          
+
+          
+
+          
+          <aside class="social">
+            <h5>Social</h5>
+            <div class="social-content">
+              <ul class="list-inline">
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fwebsite%2fblogs%2fgreyhatctfwriteup%2f">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://twitter.com/share?text=GreyhatCTFwriteup&url=http%3a%2f%2flocalhost%3a1313%2fwebsite%2fblogs%2fgreyhatctfwriteup%2f">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href="https://api.whatsapp.com/send?text=GreyhatCTFwriteup: http%3a%2f%2flocalhost%3a1313%2fwebsite%2fblogs%2fgreyhatctfwriteup%2f">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item text-center">
+                  <a target="_blank" href='mailto:?subject=GreyhatCTFwriteup&amp;body=Check%20out%20this%20site http%3a%2f%2flocalhost%3a1313%2fwebsite%2fblogs%2fgreyhatctfwriteup%2f'>
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+        
+      </div>
+    </div>
+  </div>
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+
+<div class="progress">
+  <div id="scroll-progress-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<Script src="http://localhost:1313/website/js/scrollProgressBar.js"></script>
+
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  
+  let stickySideBarElem = document.getElementById("stickySideBar");
+  let stickyNavBar =  true ;
+  if(stickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    stickySideBarElem.style.top = headerHeight + "px";
+  } else {
+    stickySideBarElem.style.top = "50px";
+  }
+</script>
+
+
+<script src="http://localhost:1313/website/js/readingTime.js"></script>
+
+
+
+  </div><footer>
+    
+ 
+ 
+<div class="container py-3" id="recent-posts">
+    
+    
+    <div class="h3 text-center text-secondary py-3">
+        Recent Posts
+    </div>
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="http://localhost:1313/website/blogs/greyhatctfwriteup/">
+                        <img src="http://localhost:1313/website/images/posts/ctfgreyhat2024/pic1.png" class="card-img-top" alt="GreyhatCTFwriteup">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="http://localhost:1313/website/blogs/greyhatctfwriteup/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="GreyhatCTFwriteup">GreyhatCTFwriteup</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>Grey hat CTF I participated in the GreyHats CTF 2024 along side a group of my friends. I mange to solve two challenges, All About Timing and Baby web.
+All About Timing. The All About Timing Challenge is a simple CTF challenge that requires us to guess what is the randomly generated number to get the …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Nov 2, 2024</span>
+                    <a href="http://localhost:1313/website/blogs/greyhatctfwriteup/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 pt-2">
+            <div class="card h-100">
+                
+                <div class="card-header">
+                    <a href="http://localhost:1313/website/blogs/my-first-post/">
+                        <img src="http://localhost:1313/website/images/posts/portfoliowebsite.png" class="card-img-top" alt="New Portfolio Website">
+                    </a>
+                </div>
+                
+                <div class="card-body bg-transparent p-3 shadow-sm">
+                    <a href="http://localhost:1313/website/blogs/my-first-post/" class="primary-font card-title">
+                        <h5 class="card-title bg-transparent" title="New Portfolio Website">New Portfolio Website</h5>
+                    </a>
+                    <div class="card-text secondary-font">
+                        <p>New Website With the end of my studies in Polytechnic, I have decided to create a new portfolio website!
+I utilized Wix for my previous portfolio website. However, I wish to test out the skills I have learn in school. Therefore, I chose to create a new portfolio website which was hosted on git. …</p>
+                    </div>
+                </div>
+                <div class="mt-auto card-footer">
+                    <span class="float-start">Apr 17, 2024</span>
+                    <a href="http://localhost:1313/website/blogs/my-first-post/" class="float-end btn btn-outline-info btn-sm">Read</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="https://github.com/isaackohspaces" aria-label="github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
+                <path
+                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
+
+                <metadata>
+                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                        <rdf:Description about="https://iconscout.com/legal#licenses"
+                            dc:title="Github, Online, Project, Hosting, Square"
+                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
+                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
+                            <dc:creator>
+                                <rdf:Bag>
+                                    <rdf:li>Font Awesome</rdf:li>
+                                </rdf:Bag>
+                            </dc:creator>
+                        </rdf:Description>
+                    </rdf:RDF>
+                </metadata>
+            </svg>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://www.linkedin.com/in/isaac-koh-290721211/" aria-label="linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width='2.4em' height='2.4em' fill="#fff" aria-label="LinkedIn"
+                viewBox="0 0 512 512">
+                <rect width="512" height="512" fill="#0077b5" rx="15%" />
+                <circle cx="142" cy="138" r="37" />
+                <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198" />
+                <path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32" />
+            </svg>
+        </a>
+    </span>
+    
+
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            <div class="pb-2">
+                <a href="http://localhost:1313/website/" title="Isaac">
+                    <img alt="Footer logo" src="http://localhost:1313/website/hamie.jpeg"
+                        height="40px" width="40px">
+                </a>
+            </div>
+            &copy; 2024  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div></footer><script src="http://localhost:1313/website/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="http://localhost:1313/website/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>
