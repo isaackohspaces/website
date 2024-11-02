@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>New Portfolio Website on Isaac</title>
-    <link>https://isaackohspaces.github.io/website/blogs/my-first-post/</link>
+    <link>http://localhost:1313/website/blogs/my-first-post/</link>
     <description>Recent content in New Portfolio Website on Isaac</description>
     <generator>Hugo 0.125.0</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://isaackohspaces.github.io/website/blogs/my-first-post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/website/blogs/my-first-post/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

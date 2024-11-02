@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Isaac</title>
-    <link>https://isaackohspaces.github.io/website/</link>
+    <link>http://localhost:1313/website/</link>
     <description>Recent content on Isaac</description>
     <generator>Hugo 0.125.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 02 Nov 2024 09:37:50 +0800</lastBuildDate>
-    <atom:link href="https://isaackohspaces.github.io/website/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/website/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GreyhatCTFwriteup</title>
-      <link>https://isaackohspaces.github.io/website/blogs/greyhatctfwriteup/</link>
+      <link>http://localhost:1313/website/blogs/greyhatctfwriteup/</link>
       <pubDate>Sat, 02 Nov 2024 09:37:50 +0800</pubDate>
-      <guid>https://isaackohspaces.github.io/website/blogs/greyhatctfwriteup/</guid>
+      <guid>http://localhost:1313/website/blogs/greyhatctfwriteup/</guid>
       <description>Grey hat CTF I participated in the GreyHats CTF 2024 along side a group of my friends. I mange to solve two challenges, All About Timing and Baby web.&#xA;All About Timing. The All About Timing Challenge is a simple CTF challenge that requires us to guess what is the randomly generated number to get the flag. Opening the code provided, we can see the code utilise to create this challenge.</description>
     </item>
     <item>
       <title>New Portfolio Website</title>
-      <link>https://isaackohspaces.github.io/website/blogs/my-first-post/</link>
+      <link>http://localhost:1313/website/blogs/my-first-post/</link>
       <pubDate>Wed, 17 Apr 2024 23:52:19 +0800</pubDate>
-      <guid>https://isaackohspaces.github.io/website/blogs/my-first-post/</guid>
+      <guid>http://localhost:1313/website/blogs/my-first-post/</guid>
       <description>New Website With the end of my studies in Polytechnic, I have decided to create a new portfolio website!&#xA;I utilized Wix for my previous portfolio website. However, I wish to test out the skills I have learn in school. Therefore, I chose to create a new portfolio website which was hosted on git.&#xA;Intially I considered using HTML, CSS and Javascript to create my own website. However, I eventually decided against it as I wish to include blogging features into the website.</description>
     </item>
   </channel>
