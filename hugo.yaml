@@ -135,7 +135,7 @@ params:
     button:
       enable: true
       name: "Resume"
-      url: "/others/IsaacResume.docx"
+      url: "/others/IsaacResume.pdf"
       download: true
       newPage: tre
     socialLinks:
@@ -173,7 +173,7 @@ params:
       - job: "Teaching Assistant"
         company: "Ngee Ann Polytechnic"
         date: "April 2024 - May 2024"
-        content: "I am currently working as a teaching assistant in Ngee Ann Polytechnic for the Network Security Module. As a teaching assistant, I support the lecturer by assisting students with queries for their practicals. This includes aiding them with setting up and configuring Palo-Alto Firewall"
+        content: "As a teaching assistant, I support the lecturer by assisting students with queries for their practicals. This includes aiding them with setting up and configuring Palo-Alto Firewall"
 
       - job: "Technical Support Staff"
         company: "Ngee Ann Polytechnic"
