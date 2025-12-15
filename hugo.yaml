@@ -128,7 +128,7 @@ params:
     title: "Isaac."
     subtitle: "I love computers"
     content: "An aspiring Malware researcher."
-    image: /images/test.jpeg
+    image: /hamie.jpeg
     bottomImage:
       enable: true
     # roundImage: true # Make hero image circular | default false
@@ -148,7 +148,7 @@ params:
   about:
     enable: true
     title: "About Me"
-    image: /images/test.jpeg
+    image: /hamie.jpeg
     content: |-
       I'm a Ngee Ann Polytechnic Cybersecurity and Digital Forensic Diploma graduate. I am capable of using photoshop, navigating social media and programing in Python. I enjoy formulating more efficient solutions to problems with the aid of computer applications. This necessitates me to have a keen eye for details. Currently, I am serving my national service.
 
